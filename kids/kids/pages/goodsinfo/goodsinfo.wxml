@@ -1,0 +1,113 @@
+<!--pages/goodsinfo/goodsinfo.wxml-->
+<!-- <view>
+  <nav-bar navbar-data='{{nvabarData}}' back='{{true}}'></nav-bar>
+</view> -->
+<view class='container'>
+  <view class='branner-con'>
+      
+    <Swipers imgUrls='{{pics}}'></Swipers>
+    <view bindtap='navback'  class="backButtonImage" style="top:{{(height-20)/2+9}}px">
+        <i-icon type="return" size='24' color="#000" />
+      </view>
+  </view>
+  <view class='goods-title'>
+    <!-- <view class='title'>
+      <view class="title-top">
+        <view class='title-icon'>
+          <image src='../../images/selling_point.png'></image>
+        </view>
+        <text class='name'>{{goodsInfo.brandName}}</text>
+        <view class='title-icon'>
+          <image src='../../images/selling_point.png'></image>
+        </view>
+      </view>
+    </view> -->
+    <!-- <view class='des'>
+      {{goodsInfo.spuName}}
+    </view> -->
+    <view class="titles_n">
+      <!-- <text class="icon_ji">#</text> -->
+      <text class="icon_ji_text">{{goodsInfo.spuName}}</text>
+      <!-- <text class="icon_ji">#</text> -->
+      <!-- <text class="icon_ji_texts">{{goodsInfo.spuName}}</text> -->
+    </view>
+    <!-- <view class='titles'>
+      <view class='titles-icon'>
+        <image src='../../images/selling_point.png'></image>
+      </view>
+      <view class='titles-con'>{{goodsInfo.sellPoint}}</view>
+    </view> -->
+    <view class='dess'>{{goodsInfo.sellPoint}}</view>
+    <view class='price'>
+      <text class='price-icon'>¥</text>
+      <text class='price-con'>{{goodsInfo.priceStr}}</text>
+      <!-- <text class="price-sug">(零售价:¥{{goodsInfo.recommendPriceStr}})</text> -->
+      <!-- <text class='price-con' wx:else>{{goodsInfo.minPrice}}-{{goodsInfo.maxPrice}}</text> -->
+    </view>
+  </view>
+
+
+    
+    <!-- <view class="price-sug">
+      <text>建议零售价:</text>
+      <text>¥{{goodsInfo.recommendPriceStr}}</text>
+    </view> -->
+
+    
+  <view class='line'></view>
+  <view class='goods-info w100'>
+    <view class='goods-info-title'>商品详情</view>
+    <view wx:for="{{spuDetail}}" class='w100'>
+      <view class='info-pic-item'>
+        <image src="{{item.value}}" class='w100' mode="widthFix" data-index='{{index}}' bindtap="previewImage"></image>
+      </view>
+    </view>
+  </view>
+  <view class='foot-btn-dis' wx:if="{{goodsInfo.isSellOut=='1'}}" style="bottom:{{isIphoneX?28:0}}rpx">
+    已售暨
+  </view>
+  <view class='foot-btn' bindtap='addCar' wx:if="{{goodsInfo.isSellOut=='2'}}" style="bottom:{{isIphoneX?28:0}}rpx">
+    加入购物车
+  </view>
+  <view class="foot-btn-ip" wx:if="{{isIphoneX}}" ></view>
+  <i-action-sheet visible="{{ visible }}" bind:cancel="handleCancel">
+    <view slot="header" class='action'>
+      <view class='line-t'>
+        <view class='goods-pic'>
+          <image src='{{skuPic}}' mode='aspectFill'></image>
+        </view>
+        <view class='goods-r'>
+          <view class='title'>{{goodsInfo.spuName}}</view>
+          <view class='price'><text class="price-icon">¥</text>{{skuRetailPrice}}</view>
+        </view>
+        <view class='delete-pop' bindtap='handleCancel'>x</view>
+      </view>
+      <view class='line-b'>
+        <view class='specifications' wx:if="{{spec1}}">{{spec1}}选择</view>
+        <view class='specifications-con'>
+          <view class="{{ item.isInvalid=='1'?(item.isSelect?'selectitem':'item'):'Invaliditem' }}" bindtap='tabSelect' wx:for="{{specAttr1}}" data-specAttrId="{{item.specAttrId}}" data-specAttr='1' data-isInvalid="{{item.isInvalid}}">{{item.specAttrName}}</view>
+        </view>
+
+        <view class='specifications' wx:if="{{spec2}}">{{spec2}}选择</view>
+        <view class='specifications-con'>
+          <view class="{{ item.isInvalid=='1'?(item.isSelect?'selectitem':'item'):'Invaliditem' }}" bindtap='tabSelect' wx:for="{{specAttr2}}" data-specAttrId="{{item.specAttrId}}" data-specAttr='2' data-isInvalid="{{item.isInvalid}}">{{item.specAttrName}}</view>
+
+        </view>
+        <view class='buy'>
+          <view class='buy-title'>数量选择</view>
+          <view class='buy-con'>
+            <view class='invent' wx:if="{{specAttrId1 || specAttrId2}}">库存仅剩{{qty}}件</view>
+            <view class='input-number'>
+              <i-input-number value="{{ buyqty }}" min="0" max="{{qty}}" bindchange="handleChange" />
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class='sure-btn' bindtap='addCarSure'>
+        确定
+      </view>
+       <view class="sure-btn-ip" wx:if="{{isIphoneX}}"></view>
+    </view>
+  </i-action-sheet>
+  <i-toast id="toast" />
+</view>

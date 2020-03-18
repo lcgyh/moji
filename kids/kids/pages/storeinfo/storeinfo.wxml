@@ -1,0 +1,29 @@
+<!--pages/storeinfo/storeinfo.wxml-->
+<view><nav-bar navbar-data='{{nvabarData}}' back='{{true}}'></nav-bar></view>
+<view class='container' style="padding-top:{{height}}px">
+  <view class='user'>
+    <view class='logo'>
+      <image class="userinfo-avatar" src="../../images/shop.png" mode="cover"></image>
+    </view>
+    <view class='nickname'>{{shopName}}</view>
+  </view>
+  <view class='line'></view>
+  <view class='info'>
+    <view class='container-item'>
+      <view class='label'>开通时间：</view>
+      <view class='content'>{{createTime}}</view>
+    </view>
+    <view class='container-item'>
+      <view class='label'>门店联系人：</view>
+      <view class='content'>{{shoperName}}</view>
+    </view>
+    <view class='container-item'>
+      <view class='label'>门店联系电话：</view>
+      <view class='content'>{{shopMobile}}</view>
+    </view>
+    <!-- <view class='container-item'>
+      <view class='label'>门店联系地址：</view>
+      <view class='content'>{{shopAddress}}</view>
+    </view> -->
+  </view>
+</view>

@@ -1,0 +1,73 @@
+/* pages/login/login.wxss */
+.container{
+  background: #fff;
+  overflow: hidden;
+  height: 100%;
+  justify-content:flex-end;
+}
+
+.login_form{
+  overflow: hidden;
+  margin-top:100rpx;
+}
+.login_form .input_item{
+  width: 500rpx;
+  height: 88rpx;
+  border:1px solid #B0D7D7;
+  border-radius: 30rpx;
+  padding:0 30rpx;
+  margin-bottom:34rpx;
+  
+}
+.login_form .input_item input{
+  height: 100%;
+  width: 100%;
+  color: #484A4C;
+  font-size: 30rpx;
+}
+
+.login_form .input_item .input_item_place{
+  color: #DBDBDB;
+  font-size: 26rpx;
+}
+
+.login_form .btn_item .btn_item_btn{
+  border-radius: 46rpx;
+  background: #85B7BB;
+  color: #fff;
+  font-size: 30rpx;
+  margin-top:80rpx;
+  height: 90rpx;
+  line-height: 90rpx;
+  width: 100%;
+}
+
+.login_form .btn_item .btn_item_btn_submit{
+  border-radius: 46rpx;
+  background: #35878D;
+  color: #fff;
+  font-size: 30rpx;
+  margin-top:80rpx;
+  height: 90rpx;
+  line-height: 90rpx;
+  width: 100%;
+}
+
+.login_remark{
+  width: 584rpx;
+  color: #535353;
+  font-size: 26rpx;
+  margin-top:60rpx;
+  margin-bottom: 74rpx;
+  font-weight: bold;
+  line-height: 48rpx;
+}
+.login_remark .item{
+  color: #35878D
+}
+.loin_bg{
+  width: 100%;
+  height:392rpx;
+
+}
+

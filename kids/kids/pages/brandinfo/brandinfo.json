@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "专区介绍",
+  "usingComponents": {
+    "nav-bar": "../../components/nav/nav"
+  },
+  "enablePullDownRefresh": true
+}

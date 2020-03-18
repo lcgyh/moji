@@ -1,0 +1,22 @@
+/* pages/contactus/contactus.wxss */
+.container{
+  background: #fff;
+}
+.ewm{
+  width: 372rpx;
+  height: 372rpx;
+  margin-top:214rpx;
+}
+.ewm image{
+  width: 100%;
+  height: 100%;
+}
+.title{
+  color: #35878D;
+  font-size: 26rpx;
+  margin:40rpx 0;
+}
+.des{
+  font-size: 26rpx;
+  color: #484A4C;
+}

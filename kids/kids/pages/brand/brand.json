@@ -1,0 +1,10 @@
+{
+  "navigationBarTitleText": "",
+  "usingComponents": {
+    "i-spin": "../../dist/spin/index",
+    "i-toast": "../../dist/toast/index",
+    "nav-bar": "../../components/nav/nav"
+    
+  },
+  "enablePullDownRefresh": true
+}

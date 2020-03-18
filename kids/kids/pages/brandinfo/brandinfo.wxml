@@ -1,0 +1,34 @@
+<!--pages/brandinfo/brandinfo.wxml-->
+<view><nav-bar navbar-data='{{nvabarData}}' back='{{true}}' isself='{true}'  bindbacKMeth='bacKMeth'></nav-bar></view>
+<view class='container' style="padding-top:{{height}}px">
+  <view class='brand-info'>
+    <!-- <view class='title'>#专区介绍#</view> -->
+    <view class='content'>
+      <view class='pic'>
+        <image src='{{brandDescPic}}' mode='aspectFill'></image>
+      </view>
+      <view class='des'>
+        <text> {{brandDesc}}</text>
+      </view>
+    </view>
+  </view>
+  <view class='brand-goods'>
+    <view class='title'>#专区商品#</view>
+    <view class='line'></view>
+    <view class='count-list'>
+      <view class='item' wx:for="{{list}}">
+        <view class='item-t' bindtap="goInfo" data-goodsId="{{item.spuId}}" data-isSellOut="{{item.isSellOut}}">
+          <image src='{{item.spuPic}}' mode='aspectFill'></image>
+          <view class='icon-seelout' wx:if="{{item.isSellOut=='1'}}">
+            <image src='../../images/seelout.png' class='w100 h100' mode='aspectFill'></image>
+          </view>
+        </view>
+        <view class='item-b'>
+          <view class='des'>{{item.spuName}}</view>
+          <view class='price'><text class="icon-price">¥</text>{{item.priceRange}}</view>
+           <!-- <view class='price-sug'>零售价:¥{{item.recommendPriceStr}}</view> -->
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

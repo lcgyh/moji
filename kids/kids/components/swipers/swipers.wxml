@@ -1,0 +1,14 @@
+<!--components/swipers/swipers.wxml-->
+<view class='swiper-con'>
+  <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="{{circular}}" indicator-active-color="#B0D7D7"
+  indicator-color='#FFFFFF'
+>
+    <block wx:for="{{imgUrls}}" wx:for-index="index">
+      <swiper-item>
+        <image src="{{item}}" class="slide-image" mode='aspectFill' data-index='{{index}}'
+        bindtap="previewImage"/>
+        <view class='remark'>{{index+1}}/{{imgUrls.length}}</view>
+      </swiper-item>
+    </block>
+  </swiper>
+</view>

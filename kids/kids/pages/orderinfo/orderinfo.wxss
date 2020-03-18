@@ -1,0 +1,288 @@
+/* pages/orderinfo/orderinfo.wxss */
+
+.container {
+  background: #fdfdfd;
+}
+
+.paystate {
+  width: 690rpx;
+  height: 280rpx;
+  border-radius: 40rpx;
+  margin-top: 60rpx;
+}
+
+.paystate-willpay {
+  background: #ddbebe;
+}
+
+.paystate-willsend {
+  width: 690rpx;
+  height: 280rpx;
+  background: #b0d7d7;
+  border-radius: 40rpx;
+  margin-top: 60rpx;
+}
+
+.paystate-hassend {
+  width: 690rpx;
+  height: 220rpx;
+  background: #bed7b0;
+  border-radius: 40rpx;
+  margin-top: 60rpx;
+}
+
+.paystate .title {
+  color: #262626;
+  font-size: 32rpx;
+  font-weight: bold;
+  margin-left: 40rpx;
+  margin-top: 60rpx;
+}
+
+.paystate .des {
+  color: #fdfdfd;
+  font-size: 24rpx;
+  margin-top: 30rpx;
+  margin-left: 40rpx;
+}
+
+.paystate .btns {
+  display: flex;
+  margin-top: 30rpx;
+  justify-content: flex-end;
+  margin-right: 40rpx;
+}
+
+.paystate .btns .btns-l {
+  width: 154rpx;
+  height: 54rpx;
+  background: #b0d7d7;
+  border-radius: 28rpx;
+  font-size: 24rpx;
+  color: #484a4c;
+  text-align: center;
+  line-height: 54rpx;
+  margin-right: 26rpx;
+}
+
+.paystate .btns .btns-r {
+  width: 154rpx;
+  height: 54rpx;
+  border-radius: 28rpx;
+  font-size: 24rpx;
+  text-align: center;
+  line-height: 54rpx;
+  border: 1px solid #fff;
+  color: #fff;
+}
+
+.addressinfo {
+  width: 690rpx;
+  height: 248rpx;
+  background: #fff;
+  border-radius: 20rpx;
+  box-shadow: 0rpx 4rpx 4rpx 3rpx #E6E8EE;
+  margin-top: 30rpx;
+}
+
+.addressinfo .con-t {
+  height: 84rpx;
+  width: 650rpx;
+  line-height: 84rpx;
+  margin: 0 auto;
+  color: #262626;
+  font-size: 32rpx;
+  font-weight: bold;
+  border-bottom: 1px solid #dbdbdb;
+}
+
+.addressinfo .con-b {
+  width: 650rpx;
+  margin: 0 auto;
+}
+
+.addressinfo .con-b .con-b-t {
+  display: flex;
+  color: #35373a;
+  font-size: 28rpx;
+  margin-top: 20rpx;
+  margin-bottom: 20rpx;
+}
+
+
+
+
+
+
+.addressinfo .con-b .con-b-t .con-b-t-l {
+  margin-right: 24rpx;
+}
+
+.addressinfo .con-b .con-b-b {
+  color: #35373a;
+  font-size: 28rpx;
+}
+
+.orderinfo {
+  width: 690rpx;
+  height: 265rpx;
+  background: #fff;
+  border-radius: 20rpx;
+   box-shadow: 0rpx 4rpx 4rpx 3rpx #E6E8EE;
+  margin-top: 30rpx;
+  margin-bottom: 40rpx;
+}
+
+.orderinfo .con-t {
+  height: 84rpx;
+  width: 650rpx;
+  line-height: 84rpx;
+  margin: 0 auto;
+  color: #262626;
+  font-size: 32rpx;
+  font-weight: bold;
+  border-bottom: 1px solid #dbdbdb;
+}
+
+.orderinfo .con-b {
+  width: 650rpx;
+  margin: 0 auto;
+}
+
+.orderinfo .con-b-t {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20rpx;
+  margin-bottom: 20rpx;
+  /* height: 40rpx;
+  line-height: 40rpx; */
+}
+
+.orderinfo .con-b-t .item {
+  font-size: 24rpx;
+  color: #484a4c;
+}
+
+.card {
+  width: 690rpx;
+  background: #fff;
+  border-radius: 20rpx;
+   box-shadow: 0rpx 4rpx 4rpx 3rpx #E6E8EE;
+  margin-top: 30rpx;
+}
+
+.card .con-title {
+  width: 650rpx;
+  height: 84rpx;
+  line-height: 84rpx;
+  margin: 0 auto;
+  font-size: 32rpx;
+  font-weight: bolder;
+  border-bottom: 1px solid #dbdbdb;
+  color: #262626;
+}
+
+.card .con-foot .con-foot-con {
+  width: 650rpx;
+  height: 120rpx;
+  line-height: 120rpx;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  border-top: 1px solid #dbdbdb;
+  margin-top: 30rpx;
+  font-size: 32rpx;
+}
+
+.card .con-foot .con-foot-con .con-foot-con-dl{
+  font-size: 24rpx;
+  margin-right: 10rpx;
+}
+.card .con-foot .con-foot-con .con-foot-con-dlr{
+  /* font-size: 24rpx; */
+  font-weight: bold;
+  
+}
+
+.card .con-count .con-count-con {
+  width: 650rpx;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 40rpx;
+}
+
+.card .con-count .con-count-con .con-count-con-l {
+  width: 200rpx;
+  height: 200rpx;
+  flex-shrink: 0;
+}
+
+.card .con-count .con-count-con .con-count-con-l image {
+  width: 100%;
+  height: 100%;
+  border-radius: 20rpx;
+}
+
+.card .con-count .con-count-con .con-count-con-r {
+  width: 400rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card .con-count .con-count-con .con-count-con-r .con-count-con-r-t {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  color: #333;
+  font-size: 28rpx;
+  font-weight: bold;
+}
+
+.card .con-count .con-count-con .con-count-con-r .con-count-con-r-c {
+  font-size: 24rpx;
+  color: #9d9d9d;
+  height: 36rpx;
+  line-height: 36rpx;
+}
+
+.card .con-count .con-count-con .con-count-con-r .con-count-con-r-b {
+  display: flex;
+  justify-content: space-between;
+  height: 36rpx;
+  line-height: 36rpx;
+}
+
+.card .con-count .con-count-con .con-count-con-r .con-count-con-r-b .ds-l {
+  font-size: 24rpx;
+  color: #484a4c;
+  font-weight: bolder;
+}
+
+.card .con-count .con-count-con .con-count-con-r .con-count-con-r-b .ds-r {
+  font-size: 18rpx;
+  color: #9d9d9d;
+}
+
+
+.orderinfo .con-b .con-b-t  .con-b-t-r-con{
+  display: flex;
+}
+.orderinfo .con-b .con-b-t  .con-b-t-r-con .con-b-t-r-text{
+  /* display: flex; */
+  margin-right: 30rpx;
+}
+.orderinfo .con-b .con-b-t  .con-b-t-r-con .con-b-t-r-btn{
+  /* display: flex; */
+  color: #B0D7D7;
+  width: 80rpx;
+  height: 36rpx;
+  border:1px solid #B0D7D7;
+  text-align: center;
+  line-height: 36rpx;
+  border-radius: 20rpx;
+  font-size: 24rpx;
+}

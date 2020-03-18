@@ -1,0 +1,170 @@
+/* components/goodsList/goodsList.wxss */
+
+.goodList-con {
+  width: 690rpx;
+  margin-bottom: 60rpx;
+}
+
+.goodList-con .con-top {
+  width: 100%;
+  height: 400rpx;
+  position: relative;
+}
+
+.goodList-con .con-top .pic {
+  width: 100%;
+  height: 100%;
+}
+
+.goodList-con .con-top .pic image {
+  width: 100%;
+  height: 100%;
+  border-radius: 10rpx;
+}
+
+.goodList-con .con-top .pop {
+  width: 100%;
+  height: 72rpx;
+  background: #000;
+  opacity: 0.5;
+  border-radius: 0 0 20rpx 20rpx;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  color: #fff;
+  font-size: 28rpx;
+  display: flex;
+  justify-content: space-between;
+  line-height: 72rpx;
+}
+
+.goodList-con .con-top .pop .pop-l {
+  margin-left: 20rpx;
+}
+
+.goodList-con .con-top .pop .pop-r {
+  margin-right: 20rpx;
+}
+
+.goodList-con .con-bottom .title {
+  display: flex;
+  margin-top: 30rpx;
+}
+
+.goodList-con .con-bottom .title .title-icon {
+  width: 30rpx;
+  height: 30rpx;
+}
+
+.goodList-con .con-bottom .title .title-icon image {
+  width: 20rpx;
+  height: 20rpx;
+  vertical-align: top;
+  margin-top: 6rpx;
+}
+
+.goodList-con .con-bottom .title .title-con {
+  height: 30rpx;
+  color: #484a4c;
+  font-size: 30rpx;
+  line-height: 30rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-family:FZFangSong-Z02S!important;
+}
+.goodList-con .con-bottom .des{
+  height: 30rpx;
+  color: #484A4C;
+  font-size: 24rpx;
+  line-height: 30rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin-top: 12rpx;
+  font-weight: lighter;
+
+}
+
+.goodList-con .con-bottom .marking{
+  display: flex;
+  justify-content: space-between;
+  margin-top:20rpx;
+}
+
+.goodList-con .con-bottom .marking .marking-l .marking-l-cont{
+    display: flex;
+}
+
+.goodList-con .con-bottom .marking .marking-l .marking-l-cont .marking-l-cont-icon{
+  color: #171D35;
+  font-size: 26rpx;
+  /* line-height: 50rpx; */
+  font-weight: bold;
+  display: flex;
+  align-items: flex-end;
+  padding-bottom: 6rpx;
+}
+.goodList-con .con-bottom .marking .marking-l .marking-l-cont .marking-l-cont-con{
+  color: #171D35;
+  font-size: 44rpx;
+  margin-left: 4rpx;
+  font-family:STHeitiMedium!important;
+  display: flex;
+  align-items: flex-end 
+}
+
+
+.goodList-con .con-bottom .marking .marking-l .marking-l-content{
+  display: flex;
+}
+.goodList-con .con-bottom .marking .marking-l .marking-l-content1{
+  display: flex;
+  color: #35878D;
+  font-size: 44rpx;
+  font-weight: bold;
+}
+.goodList-con .con-bottom .marking .marking-l .marking-l-content1 .marking-l-icon{
+  font-size: 26rpx;
+  line-height: 70rpx;
+}
+.goodList-con .con-bottom .marking .marking-l .marking-l-content1 .marking-l-con{
+  line-height: 60rpx;
+  margin-left: 4rpx;
+}
+
+.goodList-con .con-bottom .marking .marking-l .marking-l-content2{
+  display: flex;
+  color: #9D9D9D;
+  font-size: 28rpx;
+  text-decoration:line-through;
+  margin-left: 16rpx;
+}
+.goodList-con .con-bottom .marking .marking-l .marking-l-content2 .marking-l-icon{
+  font-size: 20rpx;
+   line-height: 65rpx;
+}
+
+.goodList-con .con-bottom .marking .marking-l .marking-l-content2 .marking-l-con{
+   line-height: 60rpx;
+    margin-left: 4rpx;
+}
+.goodList-con .con-bottom .marking .marking-r{
+  width: 180rpx;
+  height: 60rpx;
+  border:1px solid #DEC980;
+  border-radius: 30rpx;
+  color: #DEC980;
+  font-size: 28rpx;
+  text-align: center;
+  line-height: 60rpx;
+  margin-top:2rpx;
+}
+
+.price-sug{
+  font-size: 24rpx;
+  color: #484a4c;
+  line-height: 70rpx;
+  margin-left: 20rpx;
+  /* background: #fff; */
+}

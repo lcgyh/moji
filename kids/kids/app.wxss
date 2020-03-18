@@ -1,0 +1,38 @@
+/**app.wxss**/
+/* page{
+  height: 100%
+} */
+.container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+  background: #F6F6F6
+} 
+.tc{
+  text-align: center;
+}
+.tl{
+  text-align: left;
+}
+.w100{
+  width: 100%;
+}
+.h100{
+  height: 100%;
+}
+
+
+/* @font-face {
+    font-family:'FZFangSong-Z02S';
+    src:url('https://b2c.losinx.com/conf/FZFangSong-Z02S0.TTF') format('truetype'); 
+  
+}
+@font-face {
+    font-family:'STHeitiMedium';
+    src:url('https://b2c.losinx.com/conf/STHeiti_Medium.ttc') format('truetype'); 
+  
+} */
+
+

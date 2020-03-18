@@ -1,0 +1,47 @@
+<!--components/goodsList/goodsList.wxml-->
+<view class='goodList-con'>
+  <view class='con-top'>
+    <view class='pic' bindtap='goGoodsInfo' data-goodsId="{{goodsInfo.spuId}}">
+      <image src='{{goodsInfo.spuPics[0]}}' mode='aspectFill'></image>
+    </view>
+    <view class='pop' wx:if="{{ispop}}">
+      <text class='pop-l'>{{goodsInfo.activityName}}</text>
+      <text class='pop-r'>{{goodsInfo.endTimeSrt.month}}月{{goodsInfo.endTimeSrt.day}}日{{goodsInfo.endTimeSrt.hours}}:{{goodsInfo.endTimeSrt.minutes}}结束</text>
+    </view>
+  </view>
+  <view class='con-bottom'>
+    <view class='title'>
+      <!-- <view class='title-icon'>
+        <image src='../../images/sellingpoint.png'></image>
+      </view> -->
+      <view class='title-con'>{{goodsInfo.spuName}}</view>
+    </view>
+    <view class='des'>{{goodsInfo.spuSellingPoint}}</view>
+  
+    <view class='marking'>
+      <view class='marking-l'>
+        <view class='marking-l-cont' wx:if="{{priceViewType=='1'}}">
+          <view class='marking-l-cont-icon'>¥</view>
+          <!-- <view class='marking-l-cont-con'>{{goodsInfo.minPrice}}-{{goodsInfo.maxPrice}}</view> -->
+          <view class='marking-l-cont-con'>{{goodsInfo.priceStr}}</view>
+          <!-- <view class="price-sug">(零售价:¥{{goodsInfo.recommendPriceStr}})</view> -->
+        </view>
+        <view class='marking-l-content' wx:if="{{priceViewType=='2'}}">
+          <view class='marking-l-content1'>
+            <view class='marking-l-icon'>¥</view>
+            <view class='marking-l-con'>{{goodsInfo.minPrice}}</view>
+          </view>
+          <view class='marking-l-content2'>
+            <view class='marking-l-icon'>¥</view>
+            <view class='marking-l-con'>{{goodsInfo.maxPrice}}</view>
+          </view>
+          <view class="price-sug">(零售价:¥{{goodsInfo.recommendPriceStr}})</view>
+        </view>
+      </view>
+      <view class='marking-r' bindtap='goGoodsInfo' data-goodsId="{{goodsInfo.spuId}}">
+      立即查看</view>
+    </view>
+  
+
+  </view>
+</view>

@@ -1,0 +1,28 @@
+/* components/swipers/swipers.wxss */
+.swiper-con{
+  width:100%;
+  height:100%;
+}
+.swiper-con swiper{
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-con swiper image{
+  width: 100%;
+  height: 100%;
+}
+.swiper-con swiper .remark{
+  position: absolute;
+  right: 28rpx;
+  bottom: 28rpx;
+  width: 70rpx;
+  height: 36rpx;
+  text-align: center;
+  line-height: 36rpx;
+  font-size: 24rpx;
+  color: #262626;
+  background: #fff;
+  border-radius: 18rpx;
+  opacity: 0.4;
+}

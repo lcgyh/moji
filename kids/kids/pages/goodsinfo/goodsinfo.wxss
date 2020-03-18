@@ -1,0 +1,367 @@
+/* pages/goodsinfo/goodsinfo.wxss */
+
+.container {
+  background: #fff;
+}
+
+.backButtonImage{
+  position: fixed;
+  width: 36rpx;
+    height: 36rpx;
+    left: 32rpx;
+}
+
+
+.branner-con {
+  width: 100%;
+  height: 580rpx;
+  position: relative;
+}
+
+.goods-title {
+  width: 690rpx;
+  padding: 0 30rpx;
+}
+
+.goods-title .title {
+  margin-top: 40rpx;
+  /* line-height: 50rpx;  */
+}
+.goods-title .titles_n{
+  font-size: 32rpx;
+  color: #484A4C;
+  /* font-weight: bold; */
+  font-family:FZFangSong-Z02S!important;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+   margin-top: 40rpx;
+
+}
+.goods-title .titles_n .icon_ji_text{
+  /* margin-left: 8rpx;
+  margin-right: 8rpx; */
+}
+.goods-title .titles_n .icon_ji_texts{
+  margin-left: 12rpx;
+}
+
+
+.goods-title .title .title-top {
+  display: flex;
+  flex-shrink: 0;
+}
+
+.goods-title .title .title-icon {
+  width: 22rpx;
+  height: 22rpx;
+  /* margin-top: 6rpx; */
+}
+
+.goods-title .title .title-icon image {
+  width: 100%;
+  height: 100%;
+}
+
+.goods-title .title .name {
+  line-height: 50rpx;
+  font-size: 32rpx;
+  color: #484a4c;
+  margin-left: 12rpx;
+  margin-right: 12rpx;
+  font-weight: bold;
+}
+
+.goods-title .des {
+  color: #484a4c;
+  font-size: 32rpx;
+  margin-top: 20rpx;
+  font-weight: bold;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  flex-wrap: wrap;
+}
+
+.price {
+  margin-top: 20rpx;
+  font-size: 32rpx;
+}
+
+
+
+.price .price-icon {
+  font-size: 28rpx;
+  color: #484A4C;
+}
+
+.price .price-con {
+  color: #484A4C;
+  font-size: 44rpx;
+  font-weight: light;
+  margin-left: 10rpx;
+}
+
+.price-sug{
+  font-size: 24rpx;
+  color: #484a4c;
+  margin-left: 20rpx;
+}
+
+.titles {
+  height: 50rpx;
+  display: flex;
+  margin-top: 20rpx;
+}
+
+.titles .titles-icon {
+  width: 28rpx;
+  height: 28rpx;
+  margin-top: 6rpx;
+}
+
+.titles .titles-icon image {
+  width: 100%;
+  height: 100%;
+}
+
+.titles .titles-con {
+  color: #484a4c;
+  font-size: 36rpx;
+  font-weight: bolder;
+  margin-left: 12rpx;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.dess {
+  font-size: 26rpx;
+  color: #484a4c;
+  margin-top: 20rpx;
+  font-family:FZFangSong-Z02S!important;
+}
+
+.line {
+  width: 690rpx;
+  height: 1rpx;
+  background: #DFCB84;
+  margin-top: 60rpx;
+}
+
+.goods-info {
+  margin-bottom: 200rpx;
+}
+
+.goods-info .info-pic-item {
+  width: 100%;
+}
+
+.goods-info-title {
+  width: 148rpx;
+  height: 12rpx;
+  background: #DFCB84;
+  color: #484a4c;
+  font-size: 30rpx;
+  text-align: center;
+  line-height: 12rpx;
+  margin: 0 auto;
+  margin-top: 60rpx;
+  margin-bottom: 60rpx;
+}
+
+.foot-btn {
+  width: 100%;
+  height: 96rpx;
+  background: #DEC980;
+  text-align: center;
+  color: #161C35;
+  font-size: 30rpx;
+  line-height: 96rpx;
+  /* border-radius: 40rpx 0 0 0; */
+  position: fixed;
+  /* bottom: 0; */
+  left: 0;
+  z-index: 100;
+}
+
+.foot-btn-dis {
+  width: 100%;
+  height: 96rpx;
+  background:rgba(223, 203, 132, 0.4);
+  text-align: center;
+  color: #9D9D9D;
+  font-size: 30rpx;
+  line-height: 96rpx;
+  /* border-radius: 40rpx 0 0 0; */
+  position: fixed;
+  /* bottom: 0; */
+  left: 0;
+  z-index: 100;
+}
+
+.foot-btn-ip{
+  width: 100%;
+  height: 28rpx;
+  background: #DEC980;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 100;
+}
+
+
+.action .line-t {
+  display: flex;
+  border-bottom: 1rpx solid #DFCB84;
+  margin: 0 30rpx;
+  padding-bottom: 20rpx;
+  justify-content: space-between;
+}
+
+.action .line-t .goods-pic {
+  width: 200rpx;
+  height: 200rpx;
+  margin-left: 20rpx;
+  margin-top: -50rpx;
+}
+
+.action .line-t .goods-pic image {
+  width: 100%;
+  height: 100%;
+  border-radius: 10rpx;
+}
+
+.action .line-t .goods-r {
+  width: 370rpx;
+  margin-top: 10rpx;
+}
+
+.action .line-t .goods-r .title {
+  color: #484a4c;
+  font-size: 28rpx;
+  font-family:FZFangSong-Z02S!important;
+}
+
+.action .line-t .goods-r .price {
+  font-size: 36rpx;
+  color: #484A4C;
+  margin-top: 16rpx;
+}
+.action .line-t .goods-r .price .price-icon{
+  color: #484A4C;
+  font-size: 28rpx;
+}
+
+.action .line-t .delete-pop {
+  width: 30rpx;
+  color: #484a4c;
+  font-size: 36rpx;
+  text-align: right;
+}
+
+.line-b {
+  padding: 60rpx 30rpx 10rpx;
+  max-height: 600rpx;
+  overflow-y: scroll;
+}
+
+.line-b .specifications {
+  font-size: 28rpx;
+  color: #161C35;
+  margin-bottom: 28rpx;
+}
+
+.line-b .specifications-con {
+  display: flex;
+}
+
+.line-b .specifications-con {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.line-b .specifications-con .item {
+  font-size: 28rpx;
+  color: #484a4c;
+  height: 52rpx;
+  line-height: 52rpx;
+  padding: 0 52rpx;
+  border: .5px solid #DBDBDB;
+  border-radius: 26rpx;
+  margin-right: 40rpx;
+  margin-bottom: 28rpx;
+}
+
+.line-b .specifications-con .selectitem {
+  font-size: 28rpx;
+  color: #161C35;
+  height: 52rpx;
+  line-height: 52rpx;
+  padding: 0 52rpx;
+  border: 1px solid #484a4c;
+  border-radius: 26rpx;
+  margin-right: 40rpx;
+  margin-bottom: 28rpx;
+  background: #DFCB84;
+  border-color: #DFCB84;
+}
+
+.line-b .specifications-con .Invaliditem {
+  font-size: 28rpx;
+  color: #DBDBDB;
+  height: 52rpx;
+  line-height: 52rpx;
+  padding: 0 52rpx;
+  border: 1px solid #DBDBDB;
+  border-radius: 26rpx;
+  margin-right: 40rpx;
+  margin-bottom: 28rpx;
+  background: #fff;
+  border-color: #DBDBDB;
+}
+
+
+.line-b .buy {
+  display: flex;
+  justify-content: space-between;
+  height: 56rpx;
+  line-height: 56rpx;
+  margin-top: 32rpx;
+}
+
+.line-b .buy .buy-title {
+  color: #161C35;
+  font-size: 28rpx;
+}
+
+.line-b .buy .buy-con {
+  display: flex;
+}
+
+.line-b .buy .buy-con .invent {
+  margin-right: 10rpx;
+  color: #9d9d9d;
+  font-size: 20rpx;
+}
+
+.sure-btn {
+  width: 100%;
+  height: 96rpx;
+  background: #DFCB84;
+  color: #161C35;
+  font-size: 30rpx;
+  /* border-radius: 52rpx 0 0 0; */
+  text-align: center;
+  line-height: 96rpx;
+  margin-top: 108rpx;
+}
+.sure-btn-ip{
+  width: 100%;
+  height: 28rpx;
+  background: #DFCB84;
+}

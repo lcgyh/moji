@@ -1,0 +1,14 @@
+/* pages/brand/brand.wxss */
+.brand-list{
+  padding-top:50rpx;
+}
+.brand-item{
+  width: 690rpx;
+  height: 320rpx;
+  margin-bottom: 25rpx;
+}
+.brand-item image{
+  width: 100%;
+  height: 100%;
+  border-radius: 10rpx;
+}

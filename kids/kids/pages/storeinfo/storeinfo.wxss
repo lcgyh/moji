@@ -1,0 +1,52 @@
+/* pages/storeinfo/storeinfo.wxss */
+
+.container {
+  background: #fff;
+}
+
+.user {
+  width: 660rpx;
+  display: flex;
+  height: 72rpx;
+  line-height: 72rpx;
+  margin-top:74rpx;
+}
+
+.user .logo {
+  width: 72rpx;
+  height: 72rpx;
+}
+
+.user .logo image {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+.user .nickname{
+  color: #262626;
+  font-size: 32rpx;
+  margin-left: 24rpx;
+  font-weight: bold;
+}
+.line{
+  width: 660rpx;
+  height: 1px;
+  background: #DBDBDB;
+  margin-top:28rpx;
+}
+
+.info{
+  margin-top:60rpx;
+}
+.container-item {
+  width: 670rpx;
+  display: flex;
+  font-size: 26rpx;
+  color: #484a4c;
+  margin-bottom: 30rpx;
+}
+
+.container-item .label {
+  flex-shrink: 0;
+}

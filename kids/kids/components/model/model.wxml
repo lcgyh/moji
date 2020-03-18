@@ -1,0 +1,10 @@
+<!--components/model/model.wxml-->
+<view class='model-con'>
+  <i-modal visible="{{ visible }}" bind:ok="handleClickOk" bind:cancel="handleClickCancel" show-ok='{{false}}' show-cancel='{{false}}'>
+    <view class='model-con-con'>
+      <image src = '../../images/modelbg.png' class='w100'></image>
+      <slot name="count"></slot>
+      提示
+    </view>
+  </i-modal>
+</view>

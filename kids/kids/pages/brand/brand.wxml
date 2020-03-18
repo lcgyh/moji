@@ -1,0 +1,11 @@
+<!--pages/brand/brand.wxml-->
+<view><nav-bar navbar-data='{{nvabarData}}' back='{{false}}'></nav-bar></view>
+<view class='container' style="padding-top:{{height}}px">
+  <view class='brand-list'>
+    <view class='brand-item' wx:for="{{brandList}}" bindtap='goBrandInfo' data-brandId="{{item.brandId}}" data-brandName="{{item.brandName}}">
+      <image src='{{item.brandDescPic}}' mode='aspectFill'></image>
+    </view>
+  </view>
+  <i-spin fix wx:if="{{ spinShow }}"></i-spin>
+  <i-toast id="toast" />
+</view>

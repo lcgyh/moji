@@ -1,0 +1,70 @@
+<!--pages/orderinfo/orderinfo.wxml-->
+<view><nav-bar navbar-data='{{nvabarData}}' back='{{true}}' bindbacKMeth='bacKMeth' isself="{{true}}"></nav-bar></view>
+<view class='container' style="padding-top:{{height}}px">
+  <view class="{{orderInfo.orderStatus=='10'?'paystate paystate-willpay':(orderInfo.orderStatus=='20'?'paystate paystate-willsend':'paystate paystate-hassend')}}">
+    <view class='title'>{{orderInfo.orderStatusStr}}</view>
+    <view class='des'>{{orderInfo.remark}}</view>
+    <view class='btns' wx:if="{{orderInfo.orderStatus=='10'}}">
+      <view class='btns-l' bindtap="goPaying">去支付</view>
+      <view class='btns-r' bindtap="cancelPaying">取消订单</view>
+    </view>
+  </view>
+  <view class='addressinfo'>
+    <view class='con-t'>收货地址</view>
+    <view class='con-b'>
+      <view class='con-b-t'>
+        <view class='con-b-t-l'>{{spAddress.recName}}</view>
+        <view class='con-b-t-r'>{{spAddress.recMobile}}</view>
+      </view>
+      <view class='con-b-b'>{{spAddress.recAddress}}</view>
+    </view>
+  </view>
+  <view class='orderlist card'>
+    <view class='con-title'>商品清单</view>
+    <view class='con-count'>
+      <view class='con-count-con' wx:for="{{odDetails}}">
+        <view class='con-count-con-l'>
+          <image src='{{item.pic}}' mode='aspectFill'></image>
+        </view>
+        <view class='con-count-con-r'>
+          <view class='con-count-con-r-t'>{{item.spuName}}</view>
+          <view class='con-count-con-r-c'>{{item.specs}}</view>
+          <view class='con-count-con-r-b'>
+            <view class='ds-l'>¥{{item.price}}</view>
+            <view class='ds-r'>X{{item.qty}}</view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class='con-foot'>
+      <view class='con-foot-con'>
+        <view>合计金额</view>
+        <view>
+          <text class="con-foot-con-dl">¥</text>
+          <text class="con-foot-con-dlr">{{orderInfo.orderAmount}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='orderinfo'>
+    <view class='con-t'>订单信息</view>
+    <view class='con-b'>
+      <view class='con-b-t'>
+        <view class='con-b-t-l item'>下单时间</view>
+        <view class='con-b-t-r item'>{{orderInfo.createTime}}</view>
+      </view>
+      <view class='con-b-t'>
+        <view class='con-b-t-l item'>订单编号</view>
+        <view class='con-b-t-r item'>{{orderInfo.orderNo}}</view>
+      </view>
+      <view class='con-b-t'>
+        <view class='con-b-t-l item'>快递编号</view>
+        <view class='con-b-t-r item con-b-t-r-con'>
+          <view class="con-b-t-r-text">{{orderInfo.orderExpressNo}}</view>
+          <view class="con-b-t-r-btn" bindtap="copyTBL" wx:if="{{orderInfo.orderExpressNo}}">复制</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <i-toast id="toast" />
+</view>

@@ -1,0 +1,14 @@
+{
+  "navigationBarTitleText": "购物车",
+  "usingComponents": {
+    "l-card": "../../dist/card/index",
+    "i-swipeout": "../../dist/swipeout/index",
+    "i-input-number": "../../dist/input-number/index",
+    "i-icon": "../../dist/icon/index",
+    "l-slide-view":"../../dist/slide-view/index",
+    "i-modal": "../../dist/modal/index",
+    "nav-bar": "../../components/nav/nav",
+    "i-spin": "../../dist/spin/index"
+  },
+  "enablePullDownRefresh": true
+}

@@ -1,0 +1,172 @@
+<!--pages/shoppingcart/shoppingcart.wxml-->
+<view>
+  <nav-bar navbar-data='{{nvabarData}}' back='{{false}}'></nav-bar>
+</view>
+<view class='container' style="padding-top:{{height+10}}px">
+  <view class='shoppingcart-item'>
+    <view class='hasInven' wx:if="{{hasUserInfo && cartInStocks.length>0}}">
+      <view class="hasInven-itrm-card" wx:for="{{cartInStocks}}" wx:for-item="branditem" wx:for-index="paridx">
+        <l-card type="primary" plaintext="{{true}}">
+          <view class="content">
+            <view class='content-item'>
+              <view class='title'>
+                <view class='tltle-l'>{{branditem.brandName}}</view>
+                <view class='title-r'>{{branditem.limitQtyStr}}</view>
+              </view>
+              <view class='main-con'>
+                <view class='main-con-item' wx:for="{{branditem.skus}}" wx:for-item="goodsitem" wx:for-index="childidx">
+                  <l-slide-view height="260" width="640" slide-width="120">
+                    <view slot="left" class="left">
+                      <view class='left-con main-con-item-con'>
+                        <view class='checkout-cir' wx:if="{{!goodsitem.isSelect}}" bindtap='changeSelect' data-select="{{goodsitem.isSelect}}" data-parentIndes="{{paridx}}" data-index="{{childidx}}"></view>
+                        <view class='checkout-cir-select' wx:if="{{goodsitem.isSelect}}" bindtap='changeSelect' data-select="{{goodsitem.isSelect}}" data-parentIndes="{{paridx}}" data-index="{{childidx}}">
+                          <i-icon type="right" color='#fff' size="13" />
+                        </view>
+                        <view class='googs-item'>
+                          <view class='goods-pic'>
+                            <image src='{{goodsitem.skuPic}}' mode='aspectFill'></image>
+                          </view>
+                          <view class='goods-des'>
+                            <view class='titles'>{{goodsitem.spuName}}</view>
+                            <view class='center'>{{goodsitem.specAttrStr}}</view>
+                            <view class="center-remark" wx:if="{{goodsitem.qty>goodsitem.inventory}}">当前剩余库存数量:{{goodsitem.inventory}}</view>
+                            <view class='bottom'>
+                              <view class='bottom-l'><text class="bottom-l-icon">¥</text>{{goodsitem.skuRetailPrice}}</view>
+                              <view class='bottom-r'>
+                                <view class='input-number'>
+                                  <i-input-number value="{{ goodsitem.qty }}" min="0" max="{{goodsitem.inventory }}" bindchange="handleChange" data-parentIndes="{{paridx}}" data-index="{{childidx}}" />
+                                </view>
+                              </view>
+                            </view>
+                          </view>
+                        </view>
+                      </view>
+                    </view>
+                    <view slot="right" class="right">
+                      <view class='delete' bindtap='deqCar' data-cartId="{{goodsitem.cartId}}" data-parentIndes="{{paridx}}">
+                        <view class='delete-con'>
+                          <view class='delete-con-icon'>
+                            <image src='../../images/lajitong.png'></image>
+                          </view>
+                          <view class='text'>删除</view>
+                        </view>
+                      </view>
+                    </view>
+                  </l-slide-view>
+                </view>
+              </view>
+              <view class='line'></view>
+              <view class='foots'>
+                <view class='foot-t'>{{branditem.qtySum}}件商品</view>
+                <view class='foot-b'>
+                  <view class='foot-b-l'>
+                    <text class='icon'>¥</text>
+                    <text class='price'>{{branditem.amountSum}}</text> </view>
+                  <view class='foot-b-r' bindtap='brandPaying' data-cartindex='{{paridx}}'>去结算</view>
+                </view>
+              </view>
+            </view>
+          </view>
+        </l-card>
+      </view>
+    </view>
+    <view class='noInven' wx:if="{{hasUserInfo && cartSellOut.skus.length>0}}">
+      <view class="noInven-item">
+        <l-card type="primary" plaintext="{{true}}">
+          <view class="content">
+            <view class='content-item'>
+              <view class='title'>
+                <view class='tltle-l'>{{cartSellOut.brandName}}</view>
+                <view class='title-r'>{{cartSellOut.limitQtyStr}}</view>
+              </view>
+              <view class='main-con'>
+                <view class='main-con-item' wx:for="{{cartSellOut.skus}}" wx:for-item="goodsitem" wx:for-index="childidx">
+                  <l-slide-view height="260" width="640" slide-width="120">
+                    <view slot="left" class="left">
+                      <view class='left-con main-con-item-con'>
+                        <view class='checkout-cir' wx:if="{{!goodsitem.isSelect}}" bindtap='' data-select="{{goodsitem.isSelect}}" data-parentIndes="{{paridx}}" data-index="{{childidx}}"></view>
+                        <view class='checkout-cir-select' wx:if="{{goodsitem.isSelect}}" bindtap='changeSelect' data-select="{{goodsitem.isSelect}}" data-parentIndes="{{paridx}}" data-index="{{childidx}}">
+                          <i-icon type="right" color='#fff' size="13" />
+                        </view>
+                        <view class='googs-item'>
+                          <view class='goods-pic'>
+                            <image src='{{goodsitem.skuPic}}' mode='aspectFill'></image>
+                          </view>
+                          <view class='goods-des'>
+                            <view class='titles'>{{goodsitem.spuName}}</view>
+                            <view class='center'>{{goodsitem.specAttrStr}}</view>
+                            <view class='bottom'>
+                              <view class='bottom-l'>¥{{goodsitem.skuRetailPrice}}</view>
+                              <view class='bottom-r'>
+                                <view class='input-number'>
+                                  <i-input-number value="{{ goodsitem.qty }}" min="0" max="1000" bindchange="handleChange" data-parentIndes="{{paridx}}" data-index="{{childidx}}" />
+                                </view>
+                              </view>
+                            </view>
+
+
+                          </view>
+                        </view>
+                      </view>
+                    </view>
+                    <view slot="right" class="right">
+                      <view class='delete'>
+                        <view class='delete-con' bindtap='deqCar' data-cartId="{{goodsitem.cartId}}">
+                          <view class='delete-con-icon'>
+                            <image src='../../images/lajitong.png'></image>
+                          </view>
+                          <view class='text'>删除</view>
+                        </view>
+                      </view>
+                    </view>
+                  </l-slide-view>
+                </view>
+              </view>
+            </view>
+          </view>
+        </l-card>
+      </view>
+    </view>
+
+    <view class="coutent-none" wx:if="{{hasUserInfo && cartInStocks.length<1 && cartSellOut.skus.length<1}}">
+      <view class='coutent-logo'>
+        <image src='../../images/ordernone.png'></image>
+      </view>
+      <view class="coutent-des">更多好货等着您去挑选</view>
+    </view>
+
+
+
+    <view class="coutent-none  coutent-none-nouser" wx:if="{{!hasUserInfo}}">
+      <view class='coutent-logo'>
+        <image src='../../images/ordernone.png'></image>
+      </view>
+       <view class="coutent-des">你还未登录哦! 请登录后查看</view>
+      <view class="coutent-des-nouser" bindtap="goUser">去登录</view>
+    </view>
+
+
+
+
+
+    <i-modal wx:if="{{hasUserInfo}}" visible="{{ visible }}" show-ok='{{false}}' show-cancel="{{false}}">
+      <view class="model-con">
+        <view class="model-cons">
+          <view class="model-title">{{modeltitle}}</view>
+        <view class="model-con-bg">
+          <image src='../../images/modelbg.png' class="w100 h100"></image>
+        </view>
+          <view class="model-des">{{modeldes}}</view>
+          <view class="btns btns1" wx:if="{{modelType=='1'}}">
+            <view class="btns-c item" bindtap="closePop">{{btntext}}</view>
+          </view>
+          <view class="btns btns2" wx:if="{{modelType=='2'}}">
+            <view class="btns-l item" bindtap="closePop">{{btntext1}}</view>
+            <view class="btns-r item" bindtap="handleSure">{{btntext2}}</view>
+          </view>
+        </view>
+      </view>
+    </i-modal>
+  </view>
+  <i-spin fix wx:if="{{ spinShow }}"></i-spin>
+</view>

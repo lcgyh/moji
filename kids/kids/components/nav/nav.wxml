@@ -1,0 +1,12 @@
+<view class='nav-wrap' style='height: {{height*2 + 20}}px;'>
+  <view class='nav-title' style='line-height: {{height*2 + 44}}px;'>
+    <view>{{navbarData.title}}</view>
+  </view>
+  <view class='nav-icon'>
+    <view class='nav-capsule' style='height: {{height*2 + 44}}px;' wx:if='{{navbarData.showCapsule}}'>
+      <view bindtap='_navback' wx:if='{{back}}'  data-isself="{{isself}}">
+        <i-icon type="return" size='20' color="#000" />
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,84 @@
+<!--pages/ordersure/ordersure.wxml-->
+<view><nav-bar navbar-data='{{nvabarData}}' back='{{true}}'></nav-bar></view>
+<view class='container' style="padding-top:{{height}}px">
+  <view class='address'>
+    <l-card type="primary" plaintext="{{true}}">
+      <!-- 此处为content -->
+      <view class="content">
+        <view class='title'>收货地址</view>
+
+        <view class='con' wx:if='{{!hasAddress}}' bindtap='getWxAddress'>
+          <view class='con-l'>授权微信收货地址</view>
+          <view class='con-r'><image src='../../images/more.png' class="w100 h100"></image></view>
+        </view>
+
+        <view class='con-has' wx:if='{{hasAddress}}' bindtap='getWxAddress'>
+          <view class='con-has-t'>
+            <view class='con-l'>{{addressInfo.userName}} {{addressInfo.telNumber}}</view>
+            <view class='con-r'>></view>
+          </view>
+          <view class='con-has-b'>
+            {{addressInfo.newaddress}}
+          </view>
+        </view>
+
+      </view>
+    </l-card>
+  </view>
+  <view class='card'>
+    <l-card type="primary" plaintext="{{true}}">
+      <!-- 此处为content -->
+      <view class="content">
+        <view class='con-title'>商品清单</view>
+        <view class='con-count'>
+          <view class='con-count-con' wx:for="{{sureList.skus}}" wx:if="{{item.isSelect}}">
+            <view class='con-count-con-l'>
+              <image src='{{item.skuPic}}' mode='aspectFill'></image>
+            </view>
+            <view class='con-count-con-r'>
+              <view class='con-count-con-r-t'>{{item.spuName}}</view>
+              <view class='con-count-con-r-c'>{{item.specAttrStr}}</view>
+              <view class='con-count-con-r-b'>
+                <view class='ds-l'>¥{{item.skuRetailPrice}}</view>
+                <view class='ds-r'>X{{item.qty}}</view>
+              </view>
+            </view>
+          </view>
+        </view>
+        <view class='con-foot'>
+          <view class='con-foot-con'>
+            <view>合计金额</view>
+            <view>
+              <text class="con-foot-con-dl">¥</text>
+              <text class="con-foot-con-dlr">{{sureList.amountSum}}</text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </l-card>
+
+    <view class='sure-btn' bindtap='sumbmitOrder' style="bottom:{{isIphoneX?28:0}}rpx">
+      微信付款(¥{{sureList.amountSum}}元)
+    </view>
+    <view class="sure-btn-ip" wx:if="{{isIphoneX}}" ></view>
+  </view>
+  <i-modal visible="{{ visible }}" show-ok='{{false}}' show-cancel="{{false}}">
+    <view class="model-con">
+      <view class="model-cons">
+        <view class="model-title">{{modeltitle}}</view>
+        <view class="model-con-bg">
+          <image src='../../images/modelbg.png' class="w100 h100"></image>
+        </view>
+        <view class="model-des">{{modeldes}}</view>
+        <view class="btns btns1" wx:if="{{modelType=='1'}}">
+          <view class="btns-c item" bindtap="closePop">{{btntext}}</view>
+        </view>
+        <view class="btns btns2" wx:if="{{modelType=='2'}}">
+          <view class="btns-l item" bindtap="leftBtn">{{btntext1}}</view>
+          <view class="btns-r item" bindtap="handleSure">{{btntext2}}</view>
+        </view>
+      </view>
+    </view>
+  </i-modal>
+
+</view>

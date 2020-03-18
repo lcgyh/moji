@@ -1,0 +1,54 @@
+<!--pages/order/order.wxml-->
+<view><nav-bar navbar-data='{{nvabarData}}' back='{{true}}' bindbacKMeth='bacKMeth' isself="{{true}}"></nav-bar></view>
+<view class='container' style="padding-top:{{height+4}}px">
+  <view class='tabs-cons'>
+    <i-tabs current="{{ current }}" bindchange="handleChange" color='#DFCB84'>
+      <i-tab key="1" title="全部"></i-tab>
+      <i-tab key="2" title="待支付"></i-tab>
+      <i-tab key="3" title="待发货"></i-tab>
+      <i-tab key="4" title="已发货"></i-tab>
+    </i-tabs>
+  </view>
+  <view class='coutent' wx:if="{{hasOrder}}"> 
+    <view class='coutent-item' wx:for="{{orderList}}" bindtap='goOrderInfo' data-orderId="{{item.orderId}}">
+      <view class='item-top'>
+        <view class='item-top-l'>下单时间：{{item.createTime}}</view>
+        <view class='item-top-r'>
+          <image src="../../images/willpaid.png" wx:if="{{item.orderStatus=='10'}}"></image>
+          <image src="../../images/willsend.png" wx:if="{{item.orderStatus=='20'}}"></image>
+          <image src="../../images/postsend.png" wx:if="{{item.orderStatus=='30'}}"></image>
+          <!-- <image src="../../images/postsend.png" wx:if="{{item.orderStatus=='40'}}"></image> -->
+           <image src="../../images/hasCancel.png" wx:if="{{item.orderStatus=='70'}}"></image>
+        </view>
+      </view>
+
+      <!-- 左右 -->
+      <view class='item-center' wx:if="{{item.odDetails.length<2}}">
+        <view class='item-center-l'>
+          <image src='{{item.odDetails[0].pic}}' mode='aspectFill'></image>
+        </view>
+        <view class='item-center-r'>
+          <view class='item-center-r-t'>{{item.odDetails[0].spuName}}</view>
+          <view class='item-center-r-b'>{{item.odDetails[0].specs}}</view>
+        </view>
+      </view>
+      <!-- 三张图 -->
+      <view class="item-center-s" wx:if="{{item.odDetails.length>1}}">
+        <view class='item-center-s'  wx:for="{{item.odDetails}}" wx:for-item="i" wx:for-index="idx" wx:if="{{idx<3}}">
+          <image src='{{i.pic}}' mode='aspectFill'></image>
+        </view>
+      </view>
+      <view class='item-bottom'>
+        <text class='item-bottom-l'>共{{item.orderQty}}件商品 合计 ¥</text>
+        <text class='item-bottom-r'> {{item.orderAmount}}</text>
+      </view>
+    </view>
+  </view>
+  <view class='coutent-ano' wx:if="{{!hasOrder}}">
+    <view class='coutent-logo'>
+      <image src='../../images/noneorder.png'></image>
+    </view>
+    <view class='coutent-des'>更多好货等着您去挑选</view>
+  </view>
+   <i-spin fix wx:if="{{ spinShow }}"></i-spin>
+</view>

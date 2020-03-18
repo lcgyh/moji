@@ -1,0 +1,5 @@
+/* components/model/model.wxss */
+.model-con-con{
+  /* width: 610rpx;
+  height: 400rpx; */
+}

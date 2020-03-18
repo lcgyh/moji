@@ -1,0 +1,6 @@
+<!--pages/contactus/contactus.wxml-->
+<view class='container'>
+  <view class='ewm'><image src='../../images/goods.png'></image></view>
+  <view class='title'>客服微信号：123456678</view>
+  <view class='des'>如果你有任何问题都可以联系我们专属的小客服～</view>
+</view>

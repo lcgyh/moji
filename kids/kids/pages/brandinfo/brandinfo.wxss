@@ -1,0 +1,119 @@
+/* pages/brandinfo/brandinfo.wxss */
+
+.container {
+  background: #fff;
+}
+
+.brand-info {
+  width: 690rpx;
+}
+
+.brand-info .title {
+  text-align: center;
+  font-size: 30rpx;
+  color: #484A4C;
+  margin: 40rpx 0;
+}
+
+.brand-info .content .pic {
+  width: 100%;
+  height: 320rpx;
+}
+
+.brand-info .content .pic image {
+  width: 100%;
+  height: 100%;
+  border-radius: 20rpx 20rpx 0 0;
+}
+
+.brand-info .content .des {
+  color: #484a4c;
+  font-size: 24rpx;
+  border: 1px solid #DFCB84;
+  border-top: none;
+  padding: 20rpx;
+  border-radius: 0 0 20rpx 20rpx;
+}
+
+.brand-goods .title {
+  text-align: center;
+  font-size: 30rpx;
+  color: #484A4C;
+  margin: 40rpx 0;
+}
+
+.brand-goods .line {
+  width: 690rpx;
+  height: 1px;
+  background: #DFCB84;
+  margin-bottom: 40rpx;
+}
+
+.brand-goods .count-list {
+  width: 690rpx;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.brand-goods .count-list .item {
+  width: 332rpx;
+  margin-bottom: 28rpx;
+}
+
+.brand-goods .count-list .item-t {
+  width: 332rpx;
+  height: 332rpx;
+  position: relative;
+}
+.brand-goods .count-list .icon-seelout {
+  width: 100rpx;
+  height: 100rpx;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-left: -50rpx;
+  margin-top: -50rpx;
+}
+
+
+.brand-goods .count-list .item .item-t image {
+  width: 100%;
+  height: 100%;
+  border-radius: 20rpx;
+}
+
+.brand-goods .count-list .item .item-b {
+  padding: 0 20rpx;
+}
+
+.brand-goods .count-list .item .item-b .des {
+  height: 56rpx;
+  color: #484a4c;
+  font-size: 26rpx;
+  margin-top: 12rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  font-family:FZFangSong-Z02S!important;
+}
+
+.brand-goods .count-list .item .item-b .price {
+  color: #484a4c;
+  font-size: 36rpx;
+  margin: 12rpx 0;
+  font-weight: light;
+}
+
+
+.brand-goods .count-list .item .item-b .icon-price{
+  font-size: 28rpx;
+  font-weight: lighter;
+  margin-right: 4rpx;
+}
+.price-sug{
+  font-size: 20rpx;
+  color: #484a4c;
+}
