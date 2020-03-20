@@ -26,15 +26,25 @@ Page({
     nvabarData: {
       showCapsule: 1, //是否显示左上角图标   1表示显示    0表示不显示
       title: '购物车', //导航栏 中间的标题
+      bgcolor: '#fff',
+      textcolor: '#161C35'
     },
     height: app.globalData.statusBarHeight * 2 + 20, 
+    showNav:true,
+    systemInfo: {},
+    isIphoneX: false,
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    const systemInfo = wx.getSystemInfoSync()
+    const isIphoneX = systemInfo.model.search("iPhone X") != -1
+    this.setData({
+      systemInfo: systemInfo,
+      isIphoneX: isIphoneX
+    })
   },
 
   /**
@@ -217,7 +227,7 @@ Page({
             if (res.code == '0') {
               //跳转
               wx.navigateTo({
-                url: `../ordersure/ordersure?cartindex=${cartindex}`
+                url: `../ordersure/ordersure?cartindex=${cartindex}&pageFrom=1`
               })
             } else {
               //弹窗
@@ -277,6 +287,7 @@ Page({
       }
     }
     app.globalData.carData = list
+    console.log('111',app.globalData.carData)
     return list
   },
   //qty change
@@ -325,7 +336,21 @@ Page({
     wx.switchTab({
       url: '../user/user'
     })
-  }
+  },
+  // onPageScroll: function (t) {
+  //   const e = t.scrollTop;
+  //   console.log('eee', e)
+  //   console.log('this.data.systemInfo', this.data.systemInfo)
+  //   if (e < this.data.systemInfo.statusBarHeight) {
+  //     this.setData({
+  //       showNav: true
+  //     })
+  //   } else {
+  //     this.setData({
+  //       showNav: false
+  //     })
+  //   }
+  // },
 
 })
 

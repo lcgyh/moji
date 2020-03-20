@@ -52,5 +52,11 @@
     "usingComponents": {},
     "backgroundColor": "#fff"
   },
-  "sitemapLocation": "sitemap.json"
+  "sitemapLocation": "sitemap.json",
+  "plugins": {
+    "goodsSharePlugin": {
+      "version": "4.0.1",
+      "provider": "wx56c8f077de74b07c"
+    }
+  }
 }

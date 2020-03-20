@@ -24,28 +24,61 @@ Page({
     nvabarData: {
       showCapsule: 1, //是否显示左上角图标   1表示显示    0表示不显示
       title: '订单确认', //导航栏 中间的标题
+      bgcolor: '#fff',
+      textcolor: '#161C35'
     },
     height: app.globalData.statusBarHeight * 2 + 20,
     systemInfo:{},
-    isIphoneX:false
+    isIphoneX:false,
+    pageFrom:'1'
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    //判断页面从哪里了来的
+    //pageFrom = 1 购物车来的
+    //pageFrom = 2 直接购买来的
+    const pageFrom = options.pageFrom
     const systemInfo = wx.getSystemInfoSync()
-    console.log('systemInfo', systemInfo)
     const isIphoneX = systemInfo.model.search("iPhone X") != -1
-    const carData = app.globalData.carData || []
-    const cartindex = options.cartindex
     this.getAddress()
     this.getLoginState()
-    this.setData({
-      sureList: carData[cartindex],
-      systemInfo: systemInfo,
-      isIphoneX: isIphoneX
-    })
+    if (pageFrom=='1'){
+      const carData = app.globalData.carData || []
+      const cartindex = options.cartindex
+      this.setData({
+        sureList: carData[cartindex],
+        systemInfo: systemInfo,
+        isIphoneX: isIphoneX,
+        pageFrom: pageFrom
+      })
+    }
+    if (pageFrom == '2'){
+      const sureList={
+        skus:[{
+          skuPic: options.skuPic,
+          isSelect:true,
+          spuName: options.spuName,
+          specAttrStr: options.specAttrStr,
+          skuRetailPrice: options.skuRetailPrice,
+          qty: options.qty,
+          skuId: options.skuId
+        }],
+        amountSum: options.amountSum,
+        spuId: options.spuId
+      }
+      this.setData({
+        sureList: sureList,
+        systemInfo: systemInfo,
+        isIphoneX: isIphoneX,
+        pageFrom: pageFrom
+      })
+    }
+
+
+   
   },
 
   /**
@@ -150,17 +183,25 @@ Page({
   //提交订单
   sumbmitOrder: function () {
     const _this =this
+    const pageFrom = _this.data.pageFrom
     if (_this.data.hasUserInfo){
       const res = _this.throttle(1500)
       console.log('res', res)
       if (res) {
-        _this.newsumbmitOrder()
+        if (pageFrom=='1'){
+          _this.newsumbmitOrder()
+        }
+        if (pageFrom == '2') {
+          _this.newsumbmitOrderbyGoods()
+        }
       }
     }else{
       _this.goUser()
     }
   },
 
+
+  //以购物车纬度提交订单
   newsumbmitOrder: function () {
     const _this = this
     if (!_this.data.addressInfo || !_this.data.addressInfo.telNumber ||
@@ -198,6 +239,21 @@ Page({
       }
     })
   },
+
+  //以商品纬度提交订单
+  newsumbmitOrderbyGoods:function(){
+
+
+
+  },
+
+
+
+
+
+
+
+
 
   //调后台支付接口
   payState: function (orderId) {

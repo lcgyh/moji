@@ -1,5 +1,5 @@
-<view class='nav-wrap' style='height: {{height*2 + 20}}px;'>
-  <view class='nav-title' style='line-height: {{height*2 + 44}}px;'>
+<view class='nav-wrap' style='height: {{height*2 + 20}}px;background:{{navbarData.bgcolor}}'>
+  <view class='nav-title' style='line-height: {{height*2 + 44}}px;color:{{navbarData.textcolor}}'>
     <view>{{navbarData.title}}</view>
   </view>
   <view class='nav-icon'>

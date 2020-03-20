@@ -48,9 +48,25 @@ Page({
       }
     ],
     navHehght: app.globalData.statusBarHeight,
-    navHehghtText: app.globalData.statusBarHeight + 12
+    navHehghtText: app.globalData.statusBarHeight + 12,
+    systemInfo:{},
+    isIphoneX:false,
+    showNav:false,
+    nvabarData:{
+      title:'墨集严选',
+      showCapsule:false,
+      bgcolor:'#161C35',
+      textcolor:'#fff'
+    },
+    
   },
   onLoad: function (options) {
+    const systemInfo = wx.getSystemInfoSync()
+    const isIphoneX = systemInfo.model.search("iPhone X") != -1
+    this.setData({
+      systemInfo: systemInfo,
+      isIphoneX: isIphoneX
+    })
     const spinShow = true
     this.loadingView(spinShow)
     const current = this.data.current
@@ -326,7 +342,26 @@ Page({
   },
 
 
-  onShareAppMessage: function () {
-
+  onShareAppMessage: function (res) {
+    // if (res.from === 'button') {
+    //   // 来自页面内转发按钮
+    //   console.log(res.target)
+    // }
+    return {
+      title: '墨集严选-快时尚服装平台',
+      path: '/page/index/index'
+    }
+  },
+  onPageScroll: function (t) {
+    const e = t.scrollTop;
+    if (e < this.data.systemInfo.screenWidth - this.data.systemInfo.statusBarHeight - 44){
+      this.setData({
+        showNav:false
+      })
+    }else{
+      this.setData({
+        showNav: true
+      })
+    }
   },
 })

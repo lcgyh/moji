@@ -1,14 +1,14 @@
 <!--pages/goodsinfo/goodsinfo.wxml-->
-<!-- <view>
+<view>
   <nav-bar navbar-data='{{nvabarData}}' back='{{true}}'></nav-bar>
-</view> -->
+</view>
 <view class='container'>
   <view class='branner-con'>
-      
+
     <Swipers imgUrls='{{pics}}'></Swipers>
-    <view bindtap='navback'  class="backButtonImage" style="top:{{(height-20)/2+9}}px">
-        <i-icon type="return" size='24' color="#000" />
-      </view>
+    <!-- <view bindtap='navback' class="backButtonImage" style="top:{{(height-20)/2+9}}px">
+      <i-icon type="return" size='24' color="#000" />
+    </view> -->
   </view>
   <view class='goods-title'>
     <!-- <view class='title'>
@@ -47,13 +47,13 @@
   </view>
 
 
-    
-    <!-- <view class="price-sug">
+
+  <!-- <view class="price-sug">
       <text>建议零售价:</text>
       <text>¥{{goodsInfo.recommendPriceStr}}</text>
     </view> -->
 
-    
+
   <view class='line'></view>
   <view class='goods-info w100'>
     <view class='goods-info-title'>商品详情</view>
@@ -63,13 +63,51 @@
       </view>
     </view>
   </view>
-  <view class='foot-btn-dis' wx:if="{{goodsInfo.isSellOut=='1'}}" style="bottom:{{isIphoneX?28:0}}rpx">
+
+
+
+  <view class="footer" style="height:{{120+(isIphoneX?68:0)}}rpx">
+    <view class="footerView">
+      <view class="footerLeftView">
+        <image src="../../images/shareButton.png"></image>
+        <view>分享</view>
+        <button  bindtap="shareButtonMethod" class="cellButton"></button>
+      </view>
+      <view class="footerLeftView">
+        <image src="../../images/contactButton.png"></image>
+        <view>咨询</view>
+        <button openType="contact" sendMessageImg="{{pics[0]}}" sendMessagePath="/pages/goodsinfo/goodsinfo?goodsId=${goodsId}" sendMessageTitle="{{goodsInfo.spuName}}" showMessageCard="{{true}}"></button>
+      </view>
+      <view class="footerLeftView">
+        <image src="../../images/spu_detail_cart.png"></image>
+        <view>购物袋</view>
+        <view class="cartNum" hidden="{{!(cartNum>0)}}">{{cartNum}}</view>
+        <button bindtap="goCartPage"></button>
+      </view>
+      <view class="footerButtonView">
+       <button class="saleStatus_0" wx:if="{{goodsInfo.isSellOut=='1'}}">已售暨</button>
+      <block wx:elif="{{goodsInfo.isSellOut=='2'}}">
+          <block>
+            <button bindtap="addCar" class="addCardButton" data-submit='1'>加入购物袋</button>
+            <!-- <button bindtap="addCar" class="buyButton" data-submit='2'>立即购买</button> -->
+          </block>
+        </block>
+      </view>
+    </view>
+  </view>
+
+  <!-- <view class='foot-btn-dis' wx:if="{{goodsInfo.isSellOut=='1'}}" style="bottom:{{isIphoneX?28:0}}rpx">
     已售暨
   </view>
   <view class='foot-btn' bindtap='addCar' wx:if="{{goodsInfo.isSellOut=='2'}}" style="bottom:{{isIphoneX?28:0}}rpx">
     加入购物车
   </view>
-  <view class="foot-btn-ip" wx:if="{{isIphoneX}}" ></view>
+  <view class="foot-btn-ip" wx:if="{{isIphoneX}}" ></view> -->
+
+
+
+
+
   <i-action-sheet visible="{{ visible }}" bind:cancel="handleCancel">
     <view slot="header" class='action'>
       <view class='line-t'>
@@ -78,7 +116,8 @@
         </view>
         <view class='goods-r'>
           <view class='title'>{{goodsInfo.spuName}}</view>
-          <view class='price'><text class="price-icon">¥</text>{{skuRetailPrice}}</view>
+          <view class='price'>
+            <text class="price-icon">¥</text>{{skuRetailPrice}}</view>
         </view>
         <view class='delete-pop' bindtap='handleCancel'>x</view>
       </view>
@@ -106,8 +145,50 @@
       <view class='sure-btn' bindtap='addCarSure'>
         确定
       </view>
-       <view class="sure-btn-ip" wx:if="{{isIphoneX}}"></view>
+      <view class="sure-btn-ip" wx:if="{{isIphoneX}}"></view>
     </view>
   </i-action-sheet>
+  <van-popup bind:close="shareSheetShowHandle" catchtouchmove="true" customStyle="background-color: transparent" position="bottom" safeAreaInsetBottom="{{false}}" show="{{shareSheetShow}}">
+    <view class="shareSheetView">
+        <view class="shareSheetHeader">
+            <view class="shareSheetHeaderLine"></view>
+            <view class="shareSheetHeaderTitle">分享给好友</view>
+            <view class="shareSheetHeaderLine"></view>
+        </view>
+        <view class="shareSheetConsultant" wx:if="{{spuInfo.spShopConsultant!=undefined}}">你是本店顾问{{spuInfo.spShopConsultant.name}}，越多分享，越多收获</view>
+        <view class="shareSheetButtonView">
+            <button class="shareSheetButton" openType="share">
+                <image src="../../images/share_wechat.png"></image>
+                <view class="shareSheetButtonTitle">发送给朋友</view>
+            </button>
+            <share-button class="shareSheetButton shareSheetButtonMiddle" product="{{product}}" type="{{3}}" wx:if="{{product}}">
+                <image src="../../images/share_wequan.png"></image>
+                <view class="shareSheetButtonTitle">推荐到好物圈</view>
+            </share-button>
+            <button catchtap="getSharePic" class="shareSheetButton">
+                <image src="../../images/share_download.png"></image>
+                <view class="shareSheetButtonTitle">生成海报</view>
+            </button>
+        </view>
+        <view bindtap="recommendInfoCopyMethod" class="recommendView">
+            <view class="recommendViewTitle">推荐语</view>
+            <view class="recommendViewTitle1">（点击文案复制到剪切板）</view>
+            <view class="recommendViewContent">{{goodsInfo.sellPoint}}</view>
+        </view>
+        <button catchtap="shareSheetShowHandle" class="cancelButton">取消</button>
+        <view style="height: {{isIphoneX?34:0.1}}px"></view>
+    </view>
+</van-popup>
+<canvas canvasId="shareSpuImg"></canvas>
+<canvas canvasId="shareCardImg"></canvas>
+<van-popup bind:close="hideShareImg" catchtouchmove="ture" customStyle="background-color: transparent" show="{{showShareImg}}">
+    <image class="shareImage" mode="aspectFit" src="{{shareSpuPicUrl}}"></image>
+    <view bindtap="hideShareImg">
+        <button catchtap="saveImageToPhoto" class="shareImageDownLoadButton">
+            <image src="../../images/share_download.png"></image>
+            <view>保存到手机</view>
+        </button>
+    </view>
+</van-popup>
   <i-toast id="toast" />
 </view>

@@ -2,7 +2,7 @@
 
 .container {
   padding-top: 60rpx;
-  background: #fff;
+  /* background: #fff; */
 }
 
 .shoppingcart-item {

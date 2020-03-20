@@ -1,44 +1,61 @@
 /* pages/orderinfo/orderinfo.wxss */
 
 .container {
-  background: #fdfdfd;
+  /* background: #fdfdfd; */
 }
 
 .paystate {
   width: 690rpx;
   height: 280rpx;
-  border-radius: 40rpx;
+  border-radius: 10rpx;
   margin-top: 60rpx;
 }
-
-.paystate-willpay {
-  background: #ddbebe;
-}
-
-.paystate-willsend {
-  width: 690rpx;
-  height: 280rpx;
-  background: #b0d7d7;
-  border-radius: 40rpx;
-  margin-top: 60rpx;
-}
-
-.paystate-hassend {
-  width: 690rpx;
-  height: 220rpx;
-  background: #bed7b0;
-  border-radius: 40rpx;
-  margin-top: 60rpx;
-}
-
 .paystate .title {
-  color: #262626;
+  color: #DFCB84;
   font-size: 32rpx;
   font-weight: bold;
   margin-left: 40rpx;
   margin-top: 60rpx;
 }
 
+.paystate-willpay {
+  background: #161C35;
+}
+
+
+.paystate-willsend {
+  width: 690rpx;
+  height: 280rpx;
+  background: #A2DF84;
+  border-radius: 10rpx;
+  margin-top: 60rpx;
+}
+.paystate-willsend .title {
+    color: #262626;
+}
+
+
+.paystate-hassend {
+  width: 690rpx;
+  height: 220rpx;
+  background: #DF8484;
+  border-radius: 10rpx;
+  margin-top: 60rpx;
+}
+
+.paystate-hassend .title {
+    color: #262626;
+}
+.paystate-hascancel{
+  width: 690rpx;
+  height: 220rpx;
+  background: #d8d8d8;
+  border-radius: 10rpx;
+  margin-top: 60rpx;
+}
+.paystate-hascancel .title{
+  color: #262626;
+}
 .paystate .des {
   color: #fdfdfd;
   font-size: 24rpx;
@@ -56,7 +73,7 @@
 .paystate .btns .btns-l {
   width: 154rpx;
   height: 54rpx;
-  background: #b0d7d7;
+  background: #DFCB84;
   border-radius: 28rpx;
   font-size: 24rpx;
   color: #484a4c;
@@ -78,10 +95,10 @@
 
 .addressinfo {
   width: 690rpx;
-  height: 248rpx;
+  /* height: 248rpx; */
   background: #fff;
-  border-radius: 20rpx;
-  box-shadow: 0rpx 4rpx 4rpx 3rpx #E6E8EE;
+  border-radius: 10rpx;
+  /* box-shadow: 0rpx 4rpx 4rpx 3rpx #E6E8EE; */
   margin-top: 30rpx;
 }
 
@@ -99,6 +116,7 @@
 .addressinfo .con-b {
   width: 650rpx;
   margin: 0 auto;
+  padding-bottom: 30rpx;
 }
 
 .addressinfo .con-b .con-b-t {
@@ -128,7 +146,7 @@
   height: 265rpx;
   background: #fff;
   border-radius: 20rpx;
-   box-shadow: 0rpx 4rpx 4rpx 3rpx #E6E8EE;
+   /* box-shadow: 0rpx 4rpx 4rpx 3rpx #E6E8EE; */
   margin-top: 30rpx;
   margin-bottom: 40rpx;
 }
@@ -166,8 +184,8 @@
 .card {
   width: 690rpx;
   background: #fff;
-  border-radius: 20rpx;
-   box-shadow: 0rpx 4rpx 4rpx 3rpx #E6E8EE;
+  border-radius: 10rpx;
+   /* box-shadow: 0rpx 4rpx 4rpx 3rpx #E6E8EE; */
   margin-top: 30rpx;
 }
 
@@ -221,7 +239,7 @@
 .card .con-count .con-count-con .con-count-con-l image {
   width: 100%;
   height: 100%;
-  border-radius: 20rpx;
+  border-radius: 10rpx;
 }
 
 .card .con-count .con-count-con .con-count-con-r {

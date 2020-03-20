@@ -1,4 +1,7 @@
 <!--index.wxml-->
+<view wx:if='{{showNav}}'>
+  <nav-bar navbar-data='{{nvabarData}}' back='{{true}}'></nav-bar>
+</view>
 <view class='container'>
   <view class='banner-bg'>
     <image src='../../images/bannerBgy.png' class='bgimg' role="img" />

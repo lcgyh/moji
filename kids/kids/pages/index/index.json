@@ -4,7 +4,8 @@
     "GoodsList":"../../components/goodsList/goodsList",
     "i-spin": "../../dist/spin/index",
     "i-toast": "../../dist/toast/index",
-    "i-load-more": "../../dist/load-more/index"
+    "i-load-more": "../../dist/load-more/index",
+    "nav-bar": "../../components/nav/nav"
   },
   "enablePullDownRefresh":true
 

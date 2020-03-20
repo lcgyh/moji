@@ -2,10 +2,12 @@
 
 .container {
   background: #fff;
+  
 }
 
 .brand-info {
   width: 690rpx;
+  padding-top: 50rpx;
 }
 
 .brand-info .title {

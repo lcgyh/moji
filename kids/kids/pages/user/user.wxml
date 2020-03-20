@@ -3,56 +3,58 @@
   <nav-bar navbar-data='{{nvabarData}}' back='{{false}}'></nav-bar>
 </view> -->
 <view class='container'>
-    <image src='../../images/userbg.png' class="bgimg" />
-   <view class="userinfo" style="margin-top:{{height+23}}px">
-      <block wx:if="{{!hasUserInfo}}">
-        <!-- <button class='no-pic'></button> -->
-        <view class='no-pic'>
-        <view class="no-pic-box"> <image src='../../images/moren.png' class="no-pic-img" /></view>
-       
-        
+  <image src='../../images/userbg.png' class="bgimg" />
+  <view class="userinfo" style="margin-top:{{height+23}}px">
+    <block wx:if="{{!hasUserInfo}}">
+      <!-- <button class='no-pic'></button> -->
+      <view class='no-pic'>
+        <view class="no-pic-box">
+          <image src='../../images/moren.png' class="no-pic-img" />
         </view>
-        <button class='btn_item_btn_submit' open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">请登录～</button>
-      </block>
-      <block wx:if="{{hasUserInfo}}">
-        <view class="userinfo-avatar"><open-data type="userAvatarUrl" class="userinfo-avatar-pic"></open-data></view>
-        <open-data type="userNickName" class="userinfo-nickname"></open-data>
-      </block>
-    </view>
-    <view class='order-center'>
-      <view class='order-center-con'>
-        <view class='title'>
-          <view class='title-l'>我的订单</view>
-          <view class='title-r' bindtap='goOrderPage' data-odStatus='1'>查看全部订单 ></view>
+      </view>
+      <button class='btn_item_btn_submit' open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">请登录～</button>
+    </block>
+    <block wx:if="{{hasUserInfo}}">
+      <view class="userinfo-avatar">
+        <open-data type="userAvatarUrl" class="userinfo-avatar-pic"></open-data>
+      </view>
+      <open-data type="userNickName" class="userinfo-nickname"></open-data>
+    </block>
+  </view>
+  <view class='order-center'>
+    <view class='order-center-con'>
+      <view class='title'>
+        <view class='title-l'>我的订单</view>
+        <view class='title-r' bindtap='goOrderPage' data-odStatus='1'>查看全部订单 ></view>
+      </view>
+      <view class='menu'>
+        <view class='menu-item' bindtap='goOrderPage' data-odStatus='2'>
+          <view class='menu-icon'>
+            <image src='../../images/pending.png'></image>
+          </view>
+          <view class='menu-text'>待付款</view>
         </view>
-        <view class='menu'>
-          <view class='menu-item' bindtap='goOrderPage' data-odStatus='2'>
-            <view class='menu-icon'>
-              <image src='../../images/pending.png'></image>
-            </view>
-            <view class='menu-text'>待付款</view>
+        <view class='menu-item' bindtap='goOrderPage' data-odStatus='3'>
+          <view class='menu-icon '>
+            <image src='../../images/shipped.png'></image>
           </view>
-          <view class='menu-item' bindtap='goOrderPage' data-odStatus='3'>
-            <view class='menu-icon '>
-              <image src='../../images/shipped.png'></image>
-            </view>
-            <view class='menu-text'>待发货</view>
+          <view class='menu-text'>待发货</view>
+        </view>
+        <view class='menu-item' bindtap='goOrderPage' data-odStatus='4'>
+          <view class='menu-icon'>
+            <image src='../../images/transport.png'></image>
           </view>
-          <view class='menu-item' bindtap='goOrderPage' data-odStatus='4'>
-            <view class='menu-icon'>
-              <image src='../../images/transport.png'></image>
-            </view>
-            <view class='menu-text'>已发货</view>
+          <view class='menu-text'>已发货</view>
+        </view>
+        <view class='menu-item' bindtap='goOrderPage' data-odStatus='1'>
+          <view class='menu-icon'>
+            <image src='../../images/allOrder.png'></image>
           </view>
-          <view class='menu-item' bindtap='goOrderPage' data-odStatus='1'>
-            <view class='menu-icon'>
-              <image src='../../images/allOrder.png'></image>
-            </view>
-            <view class='menu-text'>全部</view>
-          </view>
+          <view class='menu-text'>全部</view>
         </view>
       </view>
     </view>
+  </view>
   <view class='menu-list-bar'>
     <!-- <view class='menu-list-bar-item'>
       <view class='menu-list-bar-item-con' bindtap='goStorePage'>
@@ -94,8 +96,8 @@
         </view>
       </view>
     </view>
-<i-spin fix wx:if="{{ spinShow }}"></i-spin>
-<i-toast id="toast" />
+    <i-spin fix wx:if="{{ spinShow }}"></i-spin>
+    <i-toast id="toast" />
 
   </view>
 </view>

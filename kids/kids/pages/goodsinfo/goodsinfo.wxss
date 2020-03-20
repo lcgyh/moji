@@ -365,3 +365,271 @@
   height: 28rpx;
   background: #DFCB84;
 }
+
+
+/* 新footer */
+.footer {
+    position: fixed;
+    display: flex;
+    z-index: 90;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: white;
+}
+
+.footerView {
+    width: 100%;
+    height: 120rpx;
+    position: relative;
+    margin: 0 40rpx;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footerLeftView {
+    height: 88rpx;
+    text-align: center;
+    position: relative;
+    font-size: 0;
+}
+
+.footerLeftView image {
+    width: 40rpx;
+    height: 40rpx;
+    margin-top: 4rpx;
+}
+
+.footerLeftView view {
+    color: #363737;
+    font-size: 20rpx;
+    line-height: 20rpx;
+    margin-top: 14rpx;
+}
+
+.footerLeftView button {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: transparent;
+}
+
+.footerLeftView button::after {
+    border: none;
+}
+
+.footerLeftView .cartNum {
+    position: absolute;
+    top: 2rpx;
+    left: 36rpx;
+    height: 22rpx;
+    border-radius: 11rpx;
+    background-color: #e84b57;
+    color: white;
+    font-size: 16rpx;
+    line-height: 22rpx;
+    padding: 0 6rpx;
+    margin-top: 0;
+    z-index: 3;
+    text-align: center;
+    min-width: 10rpx;
+}
+
+.footerButtonView {
+    width: 408rpx;
+    height: 88rpx;
+}
+
+.footerButtonView button {
+    height: 100%;
+    width: 100%;
+    border-radius: 8rpx;
+    font-size: 36rpx;
+    border: none;
+    color: white;
+    background-color: #5f7fdc;
+    line-height: 88rpx;
+    padding: 0;
+}
+
+.footerButtonView button::after {
+    border: none;
+}
+
+.footerButtonView .saleStatus_0 {
+    color: #b2b2b2;
+    background-color: white;
+    border: 1rpx solid #e6e6e6;
+}
+
+.footerButtonView .addCardButton {
+    display: inline-block;
+    /* width: 50%; */
+    /* border-radius: 8rpx 0 0 8rpx; */
+    font-size: 32rpx;
+    background-color: #DFCB84;
+}
+
+.footerButtonView .buyButton {
+    display: inline-block;
+    width: 50%;
+    font-size: 32rpx;
+    border-radius: 0 8rpx 8rpx 0;
+}
+
+van-action-sheet {
+    z-index: 99;
+}
+
+.shareSheetView {
+    background-color: white;
+    border-radius: 30rpx 30rpx 0 0;
+}
+
+.shareSheetHeader {
+    padding: 96rpx 56rpx 0;
+    height: 26rpx;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.shareSheetHeaderLine {
+    height: 12rpx;
+    border-bottom: 1rpx solid #e6e6e6;
+    width: 240rpx;
+}
+
+.shareSheetHeaderTitle {
+    color: #272727;
+    font-size: 26rpx;
+    line-height: 26rpx;
+}
+
+.shareSheetConsultant {
+    margin: 32rpx 56rpx 0;
+    font-size: 22rpx;
+    color: #363737;
+    line-height: 22rpx;
+    text-align: center;
+}
+
+.shareSheetButtonView {
+    margin: 56rpx 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.shareSheetButton {
+    font-size: 18rpx;
+    text-align: center;
+    background-color: transparent;
+    padding: 0;
+    margin: 0;
+    line-height: 18rpx;
+}
+
+.shareSheetButton::after {
+    border: none;
+}
+
+.shareSheetButtonMiddle {
+    margin: 0 80rpx;
+}
+
+.shareSheetButton image {
+    width: 129rpx;
+    height: 129rpx;
+    margin-bottom: 16rpx;
+}
+
+.shareSheetButtonTitle {
+    margin-top: 8rpx;
+    color: #272727;
+    font-weight: normal;
+    font-size: 18rpx;
+}
+
+.recommendView {
+    padding: 1rpx 40rpx 80rpx;
+    text-align: center;
+}
+
+.recommendViewTitle {
+    font-weight: bold;
+    font-size: 26rpx;
+    color: #5f7fdc;
+    display: inline-block;
+}
+
+.recommendViewTitle1 {
+    font-weight: bold;
+    font-size: 26rpx;
+    color: #b2b2b2;
+    display: inline-block;
+}
+
+.recommendViewContent {
+    font-size: 22rpx;
+    color: #363737;
+    margin-top: 34rpx;
+}
+
+.cancelButton {
+    margin: 0 40rpx 8rpx;
+    border-top: 1rpx solid #e6e6e6;
+    color: #272727;
+    font-size: 32rpx;
+    height: 94rpx;
+    line-height: 94rpx;
+    background-color: white;
+}
+
+.cancelButton::after {
+    border: none;
+}
+canvas {
+    position: fixed;
+    top: 0;
+    left: 999px;
+    width: 750px;
+    height: 1334px;
+}
+
+.shareImage {
+    width: 525rpx;
+    height: 934rpx;
+}
+
+.shareImageDownLoadButton {
+    color: white;
+    font-size: 18rpx;
+    text-align: center;
+    background-color: transparent;
+    padding: 0;
+    margin: 0;
+    width: 129rpx;
+    margin-left: 198rpx;
+}
+
+.shareImageDownLoadButton::after {
+    border: none;
+}
+
+.shareImageDownLoadButton image {
+    width: 129rpx;
+    height: 129rpx;
+}
+
+.shareImageDownLoadButton view {
+    line-height: 18rpx;
+}
+
+van-popup .van-center-enter-to {
+    background-color: transparent;
+}

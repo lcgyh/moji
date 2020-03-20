@@ -3,7 +3,7 @@
   position: fixed;
   width: 100%;
   top: 0;
-  background: #fff;
+  /* background: #fff; */
   color: #000;
   z-index: 9999999;
 }
@@ -21,7 +21,7 @@
   bottom: 0;
   margin: auto;
   font-size: 32rpx;
-  color: #262626;
+  /* color: #262626; */
   font-weight: bold;
   /* background: pink; */
 }

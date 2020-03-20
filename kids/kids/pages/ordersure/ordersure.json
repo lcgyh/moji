@@ -3,6 +3,7 @@
   "usingComponents": {
     "l-card": "../../dist/card/index",
     "i-modal": "../../dist/modal/index",
-    "nav-bar": "../../components/nav/nav"
+    "nav-bar": "../../components/nav/nav",
+    "van-icon": "../../dist1/icon/index"
   }
 }

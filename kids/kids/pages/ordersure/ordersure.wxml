@@ -1,5 +1,7 @@
 <!--pages/ordersure/ordersure.wxml-->
-<view><nav-bar navbar-data='{{nvabarData}}' back='{{true}}'></nav-bar></view>
+<view>
+  <nav-bar navbar-data='{{nvabarData}}' back='{{true}}'></nav-bar>
+</view>
 <view class='container' style="padding-top:{{height}}px">
   <view class='address'>
     <l-card type="primary" plaintext="{{true}}">
@@ -9,13 +11,15 @@
 
         <view class='con' wx:if='{{!hasAddress}}' bindtap='getWxAddress'>
           <view class='con-l'>授权微信收货地址</view>
-          <view class='con-r'><image src='../../images/more.png' class="w100 h100"></image></view>
+          <view class='con-r'>
+            <image src='../../images/more.png' class="w100 h100"></image>
+          </view>
         </view>
 
         <view class='con-has' wx:if='{{hasAddress}}' bindtap='getWxAddress'>
           <view class='con-has-t'>
             <view class='con-l'>{{addressInfo.userName}} {{addressInfo.telNumber}}</view>
-            <view class='con-r'>></view>
+            <view class='con-r'><van-icon name="arrow" /></view>
           </view>
           <view class='con-has-b'>
             {{addressInfo.newaddress}}
@@ -60,7 +64,7 @@
     <view class='sure-btn' bindtap='sumbmitOrder' style="bottom:{{isIphoneX?28:0}}rpx">
       微信付款(¥{{sureList.amountSum}}元)
     </view>
-    <view class="sure-btn-ip" wx:if="{{isIphoneX}}" ></view>
+    <view class="sure-btn-ip" wx:if="{{isIphoneX}}"></view>
   </view>
   <i-modal visible="{{ visible }}" show-ok='{{false}}' show-cancel="{{false}}">
     <view class="model-con">

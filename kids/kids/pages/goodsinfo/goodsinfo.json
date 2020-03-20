@@ -6,7 +6,9 @@
     "i-input-number": "../../dist/input-number/index",
     "i-toast": "../../dist/toast/index",
     "nav-bar": "../../components/nav/nav",
-    "i-icon": "../../dist/icon/index"
+    "i-icon": "../../dist/icon/index",
+    "van-popup": "../../dist1/popup/index",
+    "share-button": "plugin://goodsSharePlugin/share-button"
   },
   "enablePullDownRefresh": true
 }

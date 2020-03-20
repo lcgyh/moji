@@ -1,7 +1,7 @@
 <!--pages/orderinfo/orderinfo.wxml-->
 <view><nav-bar navbar-data='{{nvabarData}}' back='{{true}}' bindbacKMeth='bacKMeth' isself="{{true}}"></nav-bar></view>
 <view class='container' style="padding-top:{{height}}px">
-  <view class="{{orderInfo.orderStatus=='10'?'paystate paystate-willpay':(orderInfo.orderStatus=='20'?'paystate paystate-willsend':'paystate paystate-hassend')}}">
+  <view class="{{orderInfo.orderStatus=='10'?'paystate paystate-willpay':(orderInfo.orderStatus=='20'?'paystate paystate-willsend':(orderInfo.orderStatus=='70'?'paystate paystate-hascancel':(orderInfo.orderStatus=='30'?'paystate paystate-hassend':'paystate')))}}">
     <view class='title'>{{orderInfo.orderStatusStr}}</view>
     <view class='des'>{{orderInfo.remark}}</view>
     <view class='btns' wx:if="{{orderInfo.orderStatus=='10'}}">

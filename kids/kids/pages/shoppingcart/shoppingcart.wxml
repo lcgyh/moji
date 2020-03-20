@@ -1,5 +1,5 @@
 <!--pages/shoppingcart/shoppingcart.wxml-->
-<view>
+<view wx:if='{{showNav}}'>
   <nav-bar navbar-data='{{nvabarData}}' back='{{false}}'></nav-bar>
 </view>
 <view class='container' style="padding-top:{{height+10}}px">
