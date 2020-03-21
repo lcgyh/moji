@@ -201,7 +201,12 @@ module.exports = {
   getSureInv:(data)=>{
     let url = `/order/balance`
     return request('app', url, 'post',data)
-  }
+  },
+  //立即购买
+  ordernow: (data) => {
+    let url = `/order/now`
+    return request('app', url, 'post',data)
+  },
 
 
 }

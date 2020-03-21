@@ -62,6 +62,7 @@ Page({
   },
   onLoad: function (options) {
     const systemInfo = wx.getSystemInfoSync()
+    console.log('systemInfo', systemInfo)
     const isIphoneX = systemInfo.model.search("iPhone X") != -1
     this.setData({
       systemInfo: systemInfo,

@@ -17,7 +17,7 @@ Component({
     goodsInfo: {
       type: Object,
       value: {}
-    }
+    },
   },
   attached() {
     this.dataInit()

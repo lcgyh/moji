@@ -242,7 +242,35 @@ Page({
 
   //以商品纬度提交订单
   newsumbmitOrderbyGoods:function(){
+    const _this = this
+    if (!_this.data.addressInfo || !_this.data.addressInfo.telNumber ||
+      !_this.data.addressInfo.newaddress || !_this.data.hasUserInfo) {
+      return
+    }
+    const data = {
+      orderAddress: _this.data.addressInfo.newaddress,
+      orderMobile: _this.data.addressInfo.telNumber,
+      orderName: _this.data.addressInfo.userName,
+      qty: _this.data.sureList.skus[0].qty,
+      skuId: _this.data.sureList.skus[0].skuId,
+    }
 
+    WXAPI.ordernow(data).then(function (res) {
+      if (res.code == '0') {
+        const orderId = res.data
+        _this.payState(orderId)
+      } else {
+        const data = {
+          visible: true,
+          modelType: '2',  //单个按钮的 ‘2’两个按钮的
+          modeltitle: '提交失败',
+          modeldes: res.msg,
+          btntext1: '返回首页',
+          btntext2: '返回购物车'
+        }
+        _this.setPop(data)
+      }
+    })
 
 
   },

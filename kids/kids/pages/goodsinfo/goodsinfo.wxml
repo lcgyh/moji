@@ -1,6 +1,6 @@
 <!--pages/goodsinfo/goodsinfo.wxml-->
 <view>
-  <nav-bar navbar-data='{{nvabarData}}' back='{{true}}'></nav-bar>
+  <nav-bar navbar-data='{{nvabarData}}' back='{{true}}' isself='{{true}}' bindbacKMeth='navback'></nav-bar>
 </view>
 <view class='container'>
   <view class='branner-con'>
@@ -69,17 +69,19 @@
   <view class="footer" style="height:{{120+(isIphoneX?68:0)}}rpx">
     <view class="footerView">
       <view class="footerLeftView">
-        <image src="../../images/shareButton.png"></image>
+        <image src="../../images/share.png"></image>
         <view>分享</view>
         <button  bindtap="shareButtonMethod" class="cellButton"></button>
       </view>
       <view class="footerLeftView">
-        <image src="../../images/contactButton.png"></image>
+        <!-- <image src="../../images/contactButton.png"></image> -->
+        <image src="../../images/zixun.png"></image>
         <view>咨询</view>
         <button openType="contact" sendMessageImg="{{pics[0]}}" sendMessagePath="/pages/goodsinfo/goodsinfo?goodsId=${goodsId}" sendMessageTitle="{{goodsInfo.spuName}}" showMessageCard="{{true}}"></button>
       </view>
       <view class="footerLeftView">
-        <image src="../../images/spu_detail_cart.png"></image>
+        <!-- <image src="../../images/spu_detail_cart.png"></image> -->
+        <image src="../../images/buys.png"></image>
         <view>购物袋</view>
         <view class="cartNum" hidden="{{!(cartNum>0)}}">{{cartNum}}</view>
         <button bindtap="goCartPage"></button>
@@ -89,7 +91,7 @@
       <block wx:elif="{{goodsInfo.isSellOut=='2'}}">
           <block>
             <button bindtap="addCar" class="addCardButton" data-submit='1'>加入购物袋</button>
-            <!-- <button bindtap="addCar" class="buyButton" data-submit='2'>立即购买</button> -->
+            <button bindtap="addCar" class="buyButton" data-submit='2'>立即购买</button>
           </block>
         </block>
       </view>
@@ -155,7 +157,7 @@
             <view class="shareSheetHeaderTitle">分享给好友</view>
             <view class="shareSheetHeaderLine"></view>
         </view>
-        <view class="shareSheetConsultant" wx:if="{{spuInfo.spShopConsultant!=undefined}}">你是本店顾问{{spuInfo.spShopConsultant.name}}，越多分享，越多收获</view>
+        <!-- <view class="shareSheetConsultant" wx:if="{{spuInfo.spShopConsultant!=undefined}}">你是本店顾问{{spuInfo.spShopConsultant.name}}，越多分享，越多收获</view> -->
         <view class="shareSheetButtonView">
             <button class="shareSheetButton" openType="share">
                 <image src="../../images/share_wechat.png"></image>

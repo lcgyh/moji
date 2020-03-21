@@ -119,6 +119,11 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
+    this.setData({
+      shareSheetShow:false
+    })
+
+
     const goodsId = this.data.goodsId
     return {
       path: `/pages/goodsinfo/goodsinfo?backFirst=true&goodsId=${goodsId}`

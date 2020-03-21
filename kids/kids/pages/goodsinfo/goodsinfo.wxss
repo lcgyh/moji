@@ -31,7 +31,7 @@
   font-size: 32rpx;
   color: #484A4C;
   /* font-weight: bold; */
-  font-family:FZFangSong-Z02S!important;
+  /* font-family:FZFangSong-Z02S!important; */
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
@@ -450,7 +450,7 @@
     border-radius: 8rpx;
     font-size: 36rpx;
     border: none;
-    color: white;
+    color:#161C35;
     background-color: #5f7fdc;
     line-height: 88rpx;
     padding: 0;
@@ -468,8 +468,8 @@
 
 .footerButtonView .addCardButton {
     display: inline-block;
-    /* width: 50%; */
-    /* border-radius: 8rpx 0 0 8rpx; */
+    width: 50%; 
+    border-radius: 8rpx 0 0 8rpx;
     font-size: 32rpx;
     background-color: #DFCB84;
 }
@@ -479,6 +479,8 @@
     width: 50%;
     font-size: 32rpx;
     border-radius: 0 8rpx 8rpx 0;
+    background: #161C35;
+    color: #DFCB84;
 }
 
 van-action-sheet {
